@@ -12,10 +12,8 @@ function storage(data) {
     percent: 0.049
     seconds: 3.034
   localStorage.setItem("videoplayer-current-time", data.seconds)
-  console.log(data.seconds);
 }
   
 const getStorage = localStorage.getItem("videoplayer-current-time");
-console.log(getStorage)
 
 player.setCurrentTime(getStorage);
