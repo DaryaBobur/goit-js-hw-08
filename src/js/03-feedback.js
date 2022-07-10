@@ -3,13 +3,13 @@ import throttle from 'lodash.throttle';
 const form = document.querySelector('form');
 const LOCALSTORAGE_KEY = "feedback-form-state";
 
-form.addEventListener('input', throttle(formData, 1000));
+form.addEventListener('input', throttle(formData, 500));
 form.addEventListener('submit', onHandleSubmit);
 
 const readData = localStorage.getItem(LOCALSTORAGE_KEY);
 const parseData = JSON.parse(readData);
 try {
-          if (parseData) {
+    if (parseData) {
     form.email.value = parseData.email;
     form.message.value = parseData.message; 
 } else {
